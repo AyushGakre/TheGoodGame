@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast, Toaster } from 'sonner';
 
 const SavedQuotesList = ({ savedQuotes, deleteQuote }) => {
   return (
@@ -6,11 +7,12 @@ const SavedQuotesList = ({ savedQuotes, deleteQuote }) => {
       <h2 className="text-2xl font-bold mb-4">Saved Quotes List</h2>
       <ul>
         {savedQuotes.map((quote, index) => (
-          <li key={index} className="mb-2 flex justify-between items-center bg-gray-50 p-2 rounded">
+          <li key={index} className="mb-2 flex justify-between items-center bg-slate-300 p-2 rounded">
             {quote}
             <button
-              onClick={() => deleteQuote(index)}
-              className="bg-red-500 text-white px-2 py-1 rounded"
+            className="bg-red-500 text-white font-serif px-2 py-1 rounded-2xl"
+              onClick={() => 
+                deleteQuote(index)}
             >
               Delete
             </button>
