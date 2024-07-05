@@ -43,12 +43,18 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-4xl font-bold text-center mb-4">Quotes</h1>
+    <>
+    <h1 className="text-4xl font-mono text-center mb-4"> Random Quotes Generator</h1>
+    <div className="min-h-screen bg-gray-100 p-4 grid md:grid-cols-2">
+      <div>
       <QuoteCard quote={quote} fetchQuote={fetchQuote} saveQuote={saveQuote} />
+      </div>
+      <div >
       <SavedQuotesList savedQuotes={savedQuotes} deleteQuote={deleteQuote} />
+      </div>
       <Toaster/>
     </div>
+    </>
   );
 };
 
