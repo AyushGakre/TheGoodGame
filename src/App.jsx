@@ -24,8 +24,12 @@ const App = () => {
   }, []);
 
   const saveQuote = () => {
-    if(quote === 'Click to generate Random Quotes'){ return null }
-    const updatedQuotes = [...savedQuotes, quote];
+    if(quote === 'Click to generate Random Quotes')
+      { return null 
+
+      }
+      const newQuote = { text : quote , date: Date.now()}
+    const updatedQuotes = [...savedQuotes,newQuote];
     setSavedQuotes(updatedQuotes);
     localStorage.setItem('savedQuotes', JSON.stringify(updatedQuotes));
     toast.success('Quote saved successfully!');
